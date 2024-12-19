@@ -45,6 +45,7 @@ setopt hist_find_no_dups
 ### ALIASES ###
 alias la='ls -A'
 alias cat='bat'
+alias vimf='vim $(fzf -m --preview="bat --color=always {}")'
 
 ### INTEGRATIONS ###
 eval "$(fzf --zsh)"
