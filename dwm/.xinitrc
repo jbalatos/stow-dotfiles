@@ -1,2 +1,2 @@
-feh --bg-tall /usr/share/backgrounds/background.png
+feh --bg-scale /usr/share/backgrounds/background.png
 exec dwm
