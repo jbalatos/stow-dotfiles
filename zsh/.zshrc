@@ -16,10 +16,6 @@ autoload -U compinit && compinit
 
 # auto-suggestions
 zinit light zsh-users/zsh-autosuggestions
-bindkey '^y' autosuggest-accept
-bindkey '^e' autosuggest-clear
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
 # persist history
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -32,6 +28,18 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+### KEYBINDINGS ###
+# Navigation
+bindkey "\e[H" beginning-of-line
+bindkey "\e[F" end-of-line
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+# Autosuggest
+bindkey '^y' autosuggest-accept
+bindkey '^e' autosuggest-clear
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 
 ### ALIASES ###
 alias la='ls -A'
