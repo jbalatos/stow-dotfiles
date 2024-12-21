@@ -17,6 +17,11 @@ blocks:
       - type: text
         style: plain
         background: transparent
+        foreground: '#6d6d6d'
+        template: '{{if .Env.TMUX}}[tmux]{{end}}'
+      - type: text
+        style: plain
+        background: transparent
         foreground: red
         template: '{{.UserName}}@{{.HostName}}'
       - type: path
@@ -62,4 +67,4 @@ blocks:
         foreground_templates:
           - '{{if gt .Code 0}}red{{end}}'
           - '{{if eq .Code 0}}green{{end}}'
-        template: '{{if .Env.TMUX}}tmux{{end}}<b>⟩</b>'
+        template: '<b>⟩</b>'
