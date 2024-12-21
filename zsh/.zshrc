@@ -42,11 +42,18 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 ### ALIASES ###
-alias la='ls -A'
+# exa: better ls / tree 
+alias ls='exa'
+alias la='exa -a' # pass -a 2 times to show . ..
+alias ll='exa -alh --git'
+alias tree='exa --tree'
+# bat: better cat
 alias cat='bat'
+# combine vim with fzf and bat
 alias vimf='vim $(fzf -m --preview="bat --color=always {}")'
 
 ### INTEGRATIONS ###
+eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 zinit light Aloxaf/fzf-tab
 zstyle ':completion:*' menu no
