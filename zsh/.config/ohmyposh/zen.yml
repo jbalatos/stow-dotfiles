@@ -18,12 +18,12 @@ blocks:
         style: plain
         background: transparent
         foreground: '#6d6d6d'
-        template: '{{if .Env.TMUX}}[tmux]{{end}}'
+        template: '{{if .Env.TMUX}}[tmux] {{end}}'
       - type: text
         style: plain
         background: transparent
         foreground: red
-        template: '{{.UserName}}@{{.HostName}}'
+        template: '{{.UserName}}'
       - type: path
         style: plain
         background: transparent
@@ -36,7 +36,7 @@ blocks:
         foreground: '#6d6d6d'
         template: '{{ if gt .Behind 0 }}↓{{ end }}{{ if gt .Ahead 0 }}↑{{ end }}{{.HEAD}}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}'
         properties:
-          branch_icon: ' '
+          branch_icon: ''
           commit_icon: '@'
           fetch_status: true
       - type: executiontime
