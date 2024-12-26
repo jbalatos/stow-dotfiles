@@ -1,12 +1,11 @@
 ### ZINIT ###
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # oh my posh
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.yml)"
-
+eval "$(oh-my-posh init zsh --config $XDG_CONFIG_HOME/ohmyposh/zen.yml)"
 # syntax highlighting
 zinit light zsh-users/zsh-syntax-highlighting
 
@@ -18,7 +17,7 @@ autoload -U compinit && compinit
 zinit light zsh-users/zsh-autosuggestions
 # persist history
 HISTSIZE=5000
-HISTFILE=~/.zsh_history
+HISTFILE=$XDG_STATE_HOME/zsh/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 setopt appendhistory
