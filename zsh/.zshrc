@@ -8,13 +8,14 @@ source "${ZINIT_HOME}/zinit.zsh"
 eval "$(oh-my-posh init zsh --config $XDG_CONFIG_HOME/ohmyposh/zen.yml)"
 # syntax highlighting
 zinit light zsh-users/zsh-syntax-highlighting
-
 # auto-completions
 zinit light zsh-users/zsh-completions
 autoload -U compinit && compinit
-
 # auto-suggestions
 zinit light zsh-users/zsh-autosuggestions
+# nvm
+zinit light lukechilds/zsh-nvm
+
 # persist history
 HISTSIZE=5000
 HISTFILE=$XDG_STATE_HOME/zsh/.zsh_history
