@@ -51,11 +51,30 @@ alias tree='exa --tree'
 alias cat='bat'
 # combine vim with fzf and bat
 alias vimf='vim $(fzf -m --preview="bat --color=always {}")'
+# ntua vpn
+alias ntua-vpn='sudo openvpn $XDG_STATE_HOME/vpn/ntua.ovpn'
+# create and enter directory
+chdir ()
+{
+	mkdir -p -- "$1"
+	cd "$1"
+}
+
+### PATH - NVM ETC ###
+# local bin
+export PATH="$PATH:$HOME/.local/bin"
+# conTeXt
+export PATH="$PATH:/home/jbalatos/context/tex/texmf-linux-64/bin"
+export OSFONTDIR="/usr/share/fonts"
+# rvm
+export PATH="$PATH:/home/jbalatos/.local/share/gem/ruby/3.3.0/bin"
+[[ -r "$HOME/.rvm/scripts/completion" ]] && source "$HOME/.rvm/scripts/completion"
 
 ### INTEGRATIONS ###
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
 zinit light Aloxaf/fzf-tab
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
+pfetch
