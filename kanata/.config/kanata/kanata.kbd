@@ -1,0 +1,26 @@
+(defcfg process-unmapped-keys yes)
+
+(defsrc
+             u
+  caps a d h j k l ;
+  spc
+)
+
+(deflayer base
+                       _
+  @caps-esc @a-met _ _ _ _ _ @;-met
+  @spc-nav
+)
+
+(deflayer nav
+                pgup
+  _ _ pgdn left down up right _
+  _
+)
+
+(defalias
+  caps-esc (tap-hold-release 200 200 esc lctl)
+  a-met    (tap-hold-release 200 200 a   lmet)
+  ;-met    (tap-hold-release 200 200 ;   lmet)
+  spc-nav  (tap-hold-release 200 200 spc (layer-toggle nav))
+)
