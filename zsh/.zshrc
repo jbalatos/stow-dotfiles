@@ -53,6 +53,9 @@ alias cat='bat'
 alias vimf='vim $(fzf -m --preview="bat --color=always {}")'
 # ntua vpn
 alias ntua-vpn='sudo openvpn $XDG_STATE_HOME/vpn/ntua.ovpn'
+# git
+alias gs='git status'
+alias lg='lazygit'
 # create and enter directory
 chdir ()
 {
@@ -61,8 +64,6 @@ chdir ()
 }
 
 ### PATH - NVM ETC ###
-# local bin
-export PATH="$PATH:$HOME/.local/bin"
 # conTeXt
 export PATH="$PATH:/home/jbalatos/context/tex/texmf-linux-64/bin"
 export OSFONTDIR="/usr/share/fonts"
