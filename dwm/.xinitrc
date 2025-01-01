@@ -10,4 +10,6 @@ xinput set-prop "MSFT0001:00 06CB:7E7E Touchpad" "libinput Natural Scrolling Ena
 # keyboard settings
 setxkbmap -model pc104 -layout us,gr -option 'grp:win_space_toggle'
 
+dwm-autostart &
+
 exec dwm
